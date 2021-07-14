@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- STYLES CSS -->
+    <link rel="stylesheet" href="style.css">
+    <!-- === font awesome cdn  === -->
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <title>Sidebar menu</title>
+</head>
+
+<body>
+    <div class="wrapper" id="navbar">
+        <nav>
+            <div class="nav-inner">
+                <div class="nav_toggle" id="nav-toggle">
+                    <i class="fas fa-chevron-right"></i>
+                </div>
+                <ul>
+                    <a href="#" class="active">
+                        <span class="icon">
+                            <i class="fas fa-th"></i>
+                        </span>
+                        <span class="text">Home</span>
+                    </a>
+                    <a href="#">
+                        <span class="icon">
+                            <i class="far fa-user"></i>
+                        </span>
+                        <span class="text">User</span>
+                    </a>
+                    <a href="#">
+                        <span class="icon">
+                            <i class="far fa-bell"></i>
+                        </span>
+                        <span class="text">Notification</span>
+                    </a>
+                    <a href="#">
+                        <span class="icon">
+                            <i class="far fa-heart"></i>
+                        </span>
+                        <span class="text">Favorites</span>
+                    </a>
+                    <a href="#">
+                        <span class="icon">
+                            <i class="far fa-save"></i>
+                        </span>
+                        <span class="text">Saved</span>
+                    </a>
+                    <a href="#">
+                        <span class="icon">
+                            <i class="far fa-comment"></i>
+                        </span>
+                        <span class="text">Chat</span>
+                    </a>
+                </ul>
+            </div>
+            <a href="#">
+                <span class="icon">
+                    <i class="fas fa-sign-out-alt"></i>
+                </span>
+                <span class="text">Logout</span>
+            </a>
+        </nav>
+    </div>
+</body>
+<script>
+    // SHOW MENU
+    const showMenu = (toggleId, navbarId, bodyId) => {
+        const toggle = document.getElementById(toggleId),
+            navbar = document.getElementById(navbarId),
+            bodypadding = document.getElementById(bodyId)
+
+        if (toggle && navbar) {
+            toggle.addEventListener('click', () => {
+                // APARECER MENU
+                navbar.classList.toggle('show')
+                // ROTATE TOGGLE
+                toggle.classList.toggle('rotate')
+            })
+        }
+    }
+    showMenu('nav-toggle', 'navbar', 'body')
+</script>
+
+</html>
